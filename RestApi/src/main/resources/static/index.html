@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RestApi</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50">
+<div class="container mx-auto mt-10 space-y-10">
+
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <h1 class="text-3xl font-bold p-6">Books</h1>
+        <hr>
+        <div id="books-list" class="px-6 py-4">
+            <h2 class="text-xl font-bold mb-4">List of Books</h2>
+        </div>
+    </div>
+
+    <div class="flex flex-wrap gap-4">
+        <div class="flex-1 bg-white shadow-md rounded-lg overflow-hidden p-6">
+            <h2 class="text-xl font-bold mb-4">Search Books by Title</h2>
+            <input type="text" id="search-title" placeholder="Enter title to search" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3">
+            <button onclick="fetchBookByTitle()" class="w-full bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Search</button>
+        </div>
+
+        <div class="flex-1 bg-white shadow-md rounded-lg overflow-hidden p-6">
+            <h2 class="text-xl font-bold mb-4">Search Book by ID</h2>
+            <input type="number" id="search-id" placeholder="Enter ID to search" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3">
+            <button onclick="fetchBookById()" class="w-full bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Search</button>
+        </div>
+    </div>
+
+    <div id="book-form" class="bg-white shadow-md rounded-lg overflow-hidden p-6">
+        <h2 class="text-xl font-bold mb-4">Create New Book</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <input type="text" id="title" placeholder="Title" class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight ">
+            <input type="text" id="description" placeholder="Description" class="shadow appearance-none border rounded py-2 px-3 text-gray-700">
+            <input type="number" id="publishedYear" placeholder="Published Year" class="shadow appearance-none border rounded py-2 px-3 text-gray-700">
+            <input type="text" id="author" placeholder="Author" class="shadow appearance-none border rounded py-2 px-3 text-gray-700">
+            <input type="text" id="category" placeholder="Category" class="shadow appearance-none border rounded py-2 px-3 text-gray-700">
+        </div>
+        <button onclick="createBook()" class="w-full bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Add Book</button>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
